@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+}
+  100% { opacity: 100; }
+}
+
+/* source codepen: https://codepen.io/nelledejones/pen/gOOPWrK */
+@keyframes swing {
+	20% { transform: rotate(15deg); }	
+	40% { transform: rotate(-10deg); }
+	60% { transform: rotate(5deg); }	
+	80% { transform: rotate(-5deg); }	
+	100% { transform: rotate(0deg); }
+}
+
+.animate-swing {
+  transform-origin: top center;
+  animation: swing 2s ease;
+}
+
+/*  */
+
+.animate-fade-in {
+  animation: fadeIn 0.5s;
+}
+
+.animate-zoom-in {
+  animation: zoomIn 0.5s ease-in;
+};
+
+.animate-flip-in {
+  animation: flipIn 10s ease-in;
+}
