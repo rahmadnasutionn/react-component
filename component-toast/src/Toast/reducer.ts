@@ -8,21 +8,17 @@ export enum toastActionEnum {
 
 export const toastReducer = (
   toasts: ToastProps[],
-  action: { type: toastActionEnum, payload: ToastProps, max?: number},
+  action: { type: toastActionEnum, payload: ToastProps},
 ) => {
   switch(action.type) {
     case toastActionEnum.add:
-      if (toasts.length >= (action.max || 3)) {
-        return [...toasts];
-      }
-
       if (toasts.find(toast => toast.id === action.payload.id)) {
         return [...toasts]
       }
 
       if (!action.payload.id) {
-        const randomStr = Math.random().toString(32);
-        action.payload.id = `toast-${randomStr}`
+        const randomId = Math.random().toString(32);
+        action.payload.id = `toast-${randomId}`
       }
 
       return [action.payload, ...toasts];

@@ -78,11 +78,12 @@ export const ToastContainer = forwardRef<HTMLDivElement, ToastContainerProps>(
     >
       {toasts.map((toast: ToastProps) => (
         <div
+          key={toast.id}
           className={[
             animationStyling[animation]
           ].join(' ')}
         >
-          <Toast key={toast.id} {...toast} />
+          <Toast {...toast} />
         </div>
       ))}
     </div>
