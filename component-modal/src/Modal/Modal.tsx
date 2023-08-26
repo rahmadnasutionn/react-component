@@ -3,7 +3,7 @@ import * as React from 'react'
 import { useLockBodyScroll, useOnClickOutside } from './hooks';
 import cn from 'classnames'
 
-type ModalSize = 'auto' | 'sm' | 'md' | 'lg';
+type ModalSize = 'sm' | 'md' | 'lg';
 type ModalColor = 'white' | 'zinc'
 type ModalPosition = 'top' | 'center' | 'bottom';
 
@@ -41,7 +41,6 @@ function Modal({
   if (!open) return null;
 
   const modalSizeStyle: Record<ModalSize, string> = {
-    auto: 'w-auto',
     sm: 'sm:w-[18.75rem] w-[calc(100vw-6rem)]',
     md: 'w-[calc(100vw-6rem)] sm:w-[18.75rem] md:w-[31.25rem]',
     lg: 'w-[calc(100vw-6rem)] sm:w-[18.75rem] md:w-[31.25rem] lg:w-[50rem]'

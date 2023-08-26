@@ -33,7 +33,6 @@ function App() {
           <button
             type='button'
             className='py-2 px-6 rounded bg-slate-500 text-zinc-100'
-            onClick={closeModal}
           >
             Close
           </button>
